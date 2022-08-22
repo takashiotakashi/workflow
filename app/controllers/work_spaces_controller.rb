@@ -1,0 +1,2 @@
+class WorkSpacesController < ApplicationController
+end
