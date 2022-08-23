@@ -14,6 +14,7 @@ class WorkSpacesController < ApplicationController
 
   def create
     @work_space = WorkSpace.new(work_space_params)
+    raise
     if @work_space.save
       redirect_to work_space_path(@work_space), notice: "Work Space was successfully created."
     else
@@ -25,15 +26,27 @@ class WorkSpacesController < ApplicationController
   end
 
   def edit
-
+    set_workspace
   end
 
   def update
+    set_workspace
+    @work_space.update(work_space_params)
+
+    if @work_space.save
+      redirect_to work_space_path(@work_space), notice: "Work Space was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private
 
   def work_space_params
     params.require(:work_space).permit(:name, :price, :description)
+  end
+
+  def set_workspace
+    @work_space = WorkSpace.find(params[:id])
   end
 end
