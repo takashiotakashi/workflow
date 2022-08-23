@@ -1,19 +1,23 @@
 class WorkSpacesController < ApplicationController
   def index
     @work_spaces = WorkSpace.all
+    @work_spaces = policy_scope(WorkSpace)
   end
 
   def show
     @work_space = WorkSpace.find(params[:id])
+    authorize @work_space
   end
 
   def new
     @work_space = WorkSpace.new
+    authorize @work_space
   end
 
   def create
     @work_space = WorkSpace.new(work_space_params)
-
+    @work_space.user = current_user
+    authorize @work_space
     if @work_space.save
       redirect_to work_space_path(@work_space), notice: "Work Space was successfully created."
     else
@@ -23,9 +27,11 @@ class WorkSpacesController < ApplicationController
 
   def edit
     set_workspace
+    authorize @work_space
   end
 
   def update
+    authorize @work_space
     set_workspace
     @work_space.update(work_space_params)
 
