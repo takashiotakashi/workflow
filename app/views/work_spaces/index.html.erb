@@ -2,9 +2,26 @@
 
 <ul>
 <% @work_spaces.each do |work_space|%>
-<li><%= work_space.name   %></li>
-    <%= work_space.price %>
+    <%= link_to work_space.name, work_space, class: 'btn btn-dark my-3' %>
+  <li>
+
+    <p>R$ <%= work_space.price %></p>
     <%= work_space.description %>
     <%= work_space.user.first_name %>
+  </li>
 <%end%>
+
+</ul>
+<h1>Work Spaces</h1>
+<ul>
+  <% @work_spaces.each do |work_space|%>
+    <%= link_to work_space do %>
+      <li>
+        <%= work_space.name   %>
+        <%= work_space.price %>
+        <%= work_space.description %>
+        <%= work_space.user.first_name %>
+      </li>
+    <%end %>
+  <%end%>
 </ul>
