@@ -20,7 +20,7 @@ class WorkSpacesController < ApplicationController
       # resolver se o new é com aspas ou simbolo
       # mars: quase certo que é string, a ver.
       # Esse new se refere à view de new para work_spaces.
-      render 'new', status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
