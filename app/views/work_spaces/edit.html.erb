@@ -1,0 +1,13 @@
+<h1>Edit work space</h1>
+<%# pré-preencher o form com as informações do work_space a ser editado.%>
+
+<%= render "form", work_space: @work_space %>
+
+<div>
+  <%= link_to "Back to work_spaces", work_spaces_path %>
+</div>
+
+
+<%# <%= f.select :cabinet_id, options_from_collection_for_select(Cabinet.order(:name).all, "id", "name", params[:cabinet_id]) %>
+
+<%# <%= f.text_field :rfid, :value => params[:id] %>
