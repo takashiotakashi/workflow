@@ -1,5 +1,4 @@
 class WorkSpacesController < ApplicationController
-
   def index
     @work_spaces = WorkSpace.all
   end
@@ -18,10 +17,7 @@ class WorkSpacesController < ApplicationController
     if @work_space.save
       redirect_to work_space_path(@work_space), notice: "Work Space was successfully created."
     else
-      # resolver se o new é com aspas ou simbolo
-      # mars: quase certo que é string, a ver.
-      # Esse new se refere à view de new para work_spaces.
-      render :new, status: :unprocessable_entity
+      render 'new', status: :unprocessable_entity
     end
   end
 
