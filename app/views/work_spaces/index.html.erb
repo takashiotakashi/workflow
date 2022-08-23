@@ -2,9 +2,10 @@
 
 <ul>
 <% @work_spaces.each do |work_space|%>
-<li><%= work_space.name   %></li>
+<li><%= work_space.name %></li>
     <%= work_space.price %>
     <%= work_space.description %>
     <%= work_space.user.first_name %>
 <%end%>
 </ul>
+
