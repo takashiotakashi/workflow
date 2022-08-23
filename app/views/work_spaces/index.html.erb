@@ -1,8 +1,12 @@
 <h1>Work Spaces</h1>
 
-<% @work_spaces.each do |work_space|%>
-<li><%= work_space.name %></li>
-    <%= work_space.price %>
-    <%= work_space.description %>
-    <%= work_space.user.first_name %>
+<% @work_spaces.each do |work_space| %>
+
+  <div class="card">
+    <%= link_to work_space.name, work_space, class: 'btn btn-dark my-3' %>
+    <p>R$ <%= work_space.price %></p>
+    <p>Details: </p><%= work_space.description %>
+    <p>Host: </p><%= work_space.user.first_name %>
+  </div>
+
 <%end%>
