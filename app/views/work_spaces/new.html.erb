@@ -1,0 +1,6 @@
+<%= simple_form_for @work_space do |f| %>
+  <%= f.input :name, label: 'Name your workspace', error: 'Name is mandatory, please specify one' %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.button :submit %>
+<% end %>
