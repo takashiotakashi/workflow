@@ -1,4 +1,23 @@
- <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <nav class="c-navigation">
+    <div class="c-navigation__logo-container">
+    </div>
+    <div class="c-navigation__list-container">
+    <ul class="c-navigation__list">
+      <li class="c-navigation__list-item c-navigation__list-item--input">
+        <div class="c-navigation-search">
+          <form method="GET" action="/pt-br/" class="c-navigation-search__form">
+            <input type="search" class="c-navigation-search__input" name="s" placeholder="Pesquisar"><button type="submit" class="hidden">Pesquisar</button>
+          </form>
+
+      </li>
+        <li class="c-navigation__list-item"><a class="btn btn-blue" href="#">Start now</a>
+        </li>
+    </ul>
+
+      </div>
+    </div>
+  </nav>
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "icon-1.png" %>
