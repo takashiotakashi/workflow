@@ -17,7 +17,7 @@ class WorkSpacesController < ApplicationController
     if @work_space.save
       redirect_to work_space_path(@work_space), notice: "Work Space was successfully created."
     else
-      render 'new', status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
