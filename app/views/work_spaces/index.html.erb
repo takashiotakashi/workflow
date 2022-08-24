@@ -1,12 +1,31 @@
 <h1>Work Spaces</h1>
 
-<% @work_spaces.each do |work_space| %>
+<div class='home-grid'>
+
+  <% @work_spaces.each do |work_space| %>
 
   <div class="card">
-    <%= link_to work_space.name, work_space, class: 'btn btn-dark my-3' %>
-    <p>Details: </p><%= work_space.description %>
-    <p>R$ <%= work_space.price %></p>
-    <p>Host: </p><%= work_space.user.first_name %>
-  </div>
+    <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="">
+    <div class='card-name'>
+      <h2><%=work_space.name %></h2>
+    </div>
 
-<%end%>
+    <div class='card-details'>
+      <p> Description: <%= work_space.description %></p>
+    </div>
+
+    <div class='card-price'>
+      <p>R$ <%= work_space.price %></p>
+    </div>
+
+    <div class='card-host'>
+      <p>Host: <%= work_space.user.first_name %></p>
+    </div>
+
+    <div class='button'>
+      <%= link_to "View more", work_space, class: 'btn btn-dark my-3' %>
+    </div>
+
+  </div>
+  <%end%>
+</div>

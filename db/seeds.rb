@@ -15,7 +15,7 @@ user1 = User.create(email: "testeee@gmail.com", password: 123123, first_name: "A
 user2 = User.create(email: "teste2@teste.com", password: 123123, first_name: "Joao", last_name: "Tore" )
 
 paulista = WorkSpace.create(user: user1, name: "Paulista Work", price: 123, description: "Show" )
-madalena = WorkSpace.create(user: user2, name: "Madalanea Work", price: 456, description: "Perfeito" )
+madalena = WorkSpace.create(user: user2, name: "Madalena Work", price: 456, description: "Perfeito" )
 lapa = WorkSpace.create(user: user1, name: "Lapa Work", price: 789, description: "Legal" )
 sumare = WorkSpace.create(user: user2, name: "Sumare Work", price: 1111, description: "Estranho" )
 morumbi = WorkSpace.create(user: user1, name: "Morumbi Work", price: 555, description: "Ok" )
@@ -25,4 +25,3 @@ reserva2 = Booking.create(user: user2, start_date: "24-08-2022" , end_date: "27-
 reserva3 = Booking.create(user: user1, start_date: "29-08-2022" , end_date: "27-09-2022", amount_due: 7897, work_space: lapa)
 reserva4 = Booking.create(user: user2, start_date: "28-08-2022" , end_date: "27-09-2022", amount_due: 7897, work_space: sumare)
 reserva5 = Booking.create(user: user1, start_date: "26-08-2022" , end_date: "27-09-2022", amount_due: 7897, work_space: morumbi)
-
