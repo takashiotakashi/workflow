@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "work_spaces#index"
 
+  resources :users, only: :show
+
   resources :work_spaces do
     resources :bookings, only: [:index, :new, :create]
   end

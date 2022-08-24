@@ -1,0 +1,4 @@
+<% @user.bookings.each do |booking|%>
+  <%= booking.work_space.name %>
+  <%= booking.amount_due %>
+<% end %>
