@@ -1,4 +1,7 @@
+<h1 class="page-header pages">Your bookings</h1>
 <% @user.bookings.each do |booking|%>
-  <%= booking.work_space.name %>
-  <%= booking.amount_due %>
+  <div class="card home-grid">
+    <%= booking.work_space.name %>
+    <%= booking.amount_due %>
+  </div>
 <% end %>
