@@ -20,6 +20,8 @@ gem "jsbundling-rails"
 
 gem "dotenv-rails", groups: [:development, :test]
 
+gem "cloudinary"
+
 gem "pundit"
 
 gem "devise"
