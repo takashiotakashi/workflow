@@ -1,6 +1,5 @@
 class WorkSpacesController < ApplicationController
   def index
-    @work_spaces = WorkSpace.all
     @work_spaces = policy_scope(WorkSpace)
   end
 
