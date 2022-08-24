@@ -41,6 +41,13 @@ class WorkSpacesController < ApplicationController
     end
   end
 
+  def destroy
+    set_workspace
+    authorize @work_space
+    @work_space.destroy
+    redirect_to work_spaces_path, status: :see_other
+  end
+
   private
 
   def work_space_params
