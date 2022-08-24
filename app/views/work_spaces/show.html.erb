@@ -6,4 +6,7 @@
 
 <div>
   <%= link_to "Back to work spaces", work_spaces_path, class: "btn btn-secondary" %>
+  <% if policy(@work_space).destroy? %>
+    <%= link_to "Delete space", work_space_path(@work_space), data: { turbo_method: :delete } %>
+  <% end %>
 </div>

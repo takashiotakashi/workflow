@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = policy_scope(Booking)
+    @work_space = WorkSpace.find(params[:work_space_id])
+    @bookings = policy_scope(Booking).where(work_space: @work_space)
   end
 
   def show
@@ -10,6 +11,7 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @work_space = WorkSpace.find(params[:work_space_id])
     @booking = Booking.new
     authorize @booking
   end
@@ -17,6 +19,8 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @booking.work_space = WorkSpace.find(params[:work_space_id])
+
     authorize @booking
     if @booking.save
       redirect_to booking_path(@booking), notice: "Booking was successfully created."
