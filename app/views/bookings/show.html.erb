@@ -1,5 +1,7 @@
 <h3>Booking Info</h3>
 
+<%= "Your host is " @booking.work_space.user %>
+
 <p style="color: green"><%= notice %></p>
 
 <%= render @booking %>
@@ -9,5 +11,3 @@
 <div>
   <%= link_to "Back to bookings", work_space_bookings_path(@booking.work_space) %>
 </div>
-
-
