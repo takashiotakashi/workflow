@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   resources :work_spaces do
     resources :bookings, only: [:index, :new, :create]
+    collection do
+      get "my_work_spaces", to: "work_spaces#my_work_spaces" # criar action my_work_spaces
+    end
   end
 
   resources :bookings, only: %i[show]

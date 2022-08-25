@@ -1,6 +1,6 @@
 
 <% if @work_space.photo.present? %>
-  <%= cl_image_tag @work_space.photo.key, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag @work_space.photo.key, height: 600, crop: :fit %>
 <% else %>
   <%= image_tag "https://st.depositphotos.com/1008438/1896/i/950/depositphotos_18961721-stock-photo-office-work-place.jpg" %>
 <% end %>
@@ -9,7 +9,19 @@
 
 <p style="color: green"><%= notice %></p>
 
-<%= render @work_space %>
+<div id="<%= dom_id @work_space %>">
+
+    <strong>Name:</strong>
+    <%= @work_space.name %>
+
+    <strong>Price:</strong>
+    <%= @work_space.price %>
+
+
+    <strong>Description:</strong>
+    <%= @work_space.description %>
+
+</div>
 
 <div>
   <%= link_to "Back to work spaces", work_spaces_path, class: "btn btn-secondary" %>
