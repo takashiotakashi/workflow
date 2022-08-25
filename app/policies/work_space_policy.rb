@@ -6,10 +6,6 @@ class WorkSpacePolicy < ApplicationPolicy
     end
   end
 
-  def my_work_spaces?
-    record.user == user
-  end
-
   def show?
     true
   end
@@ -23,6 +19,6 @@ class WorkSpacePolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    record.user == user && !record.bookings.any?
   end
 end

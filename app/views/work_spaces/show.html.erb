@@ -9,7 +9,19 @@
 
 <p style="color: green"><%= notice %></p>
 
-<%= render @work_space %>
+<div id="<%= dom_id @work_space %>">
+
+    <strong>Name:</strong>
+    <%= @work_space.name %>
+
+    <strong>Price:</strong>
+    <%= @work_space.price %>
+
+
+    <strong>Description:</strong>
+    <%= @work_space.description %>
+
+</div>
 
 <div>
   <%= link_to "Back to work spaces", work_spaces_path, class: "btn btn-secondary" %>
