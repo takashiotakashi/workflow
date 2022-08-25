@@ -1,5 +1,5 @@
 class WorkSpacesController < ApplicationController
-
+  before_action :set_workspace, except: %i[index new create]
   skip_before_action :authenticate_user!, only: [:index, :show]
   skip_after_action :verify_authorized, only: :my_work_spaces
 
@@ -18,8 +18,6 @@ class WorkSpacesController < ApplicationController
   end
 
   def show
-    @work_space = WorkSpace.find(params[:id])
-    authorize @work_space
   end
 
   def new
@@ -39,15 +37,10 @@ class WorkSpacesController < ApplicationController
   end
 
   def edit
-    set_workspace
-    authorize @work_space
   end
 
   def update
-    authorize @work_space
-    set_workspace
     @work_space.update(work_space_params)
-
     if @work_space.save
       redirect_to work_space_path(@work_space), notice: "Work Space was successfully updated."
     else
@@ -56,8 +49,6 @@ class WorkSpacesController < ApplicationController
   end
 
   def destroy
-    set_workspace
-    authorize @work_space
     @work_space.destroy
     redirect_to work_spaces_path, status: :see_other
   end
@@ -70,5 +61,6 @@ class WorkSpacesController < ApplicationController
 
   def set_workspace
     @work_space = WorkSpace.find(params[:id])
+    authorize @work_space
   end
 end

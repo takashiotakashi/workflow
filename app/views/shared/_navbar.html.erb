@@ -71,8 +71,16 @@
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://avatars.githubusercontent.com/u/103535954?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
+            <% if current_user.avatar.present? %>
+              <%= image_tag(current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+            <% else %>
+              <%= image_tag("https://res.cloudinary.com/dkearav60/image/upload/v1661462298/avatars/default_avatar_small_lkbynb.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+            <% end %>
+
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <span class="dropdown-item" ><%= current_user.first_name if user_signed_in? %></span>
+
               <%= link_to "See my bookings", user_path(current_user), class: "dropdown-item" %>
               <%= link_to "Rent my work space", new_work_space_path, class: "dropdown-item" %>
               <%= link_to "View my work spaces", my_work_spaces_work_spaces_path, class: "dropdown-item" %>
