@@ -26,6 +26,9 @@ gem "pundit"
 
 gem "devise"
 
+# Gemfile
+gem "geocoder"
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 

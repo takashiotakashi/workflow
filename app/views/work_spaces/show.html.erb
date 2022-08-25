@@ -1,35 +1,33 @@
+<div class="card-trip">
+  <% if @work_space.photo.present? %>
+    <%= cl_image_tag @work_space.photo.key, height: 600, crop: :fit %>
+  <% else %>
+    <%= image_tag "https://st.depositphotos.com/1008438/1896/i/950/depositphotos_18961721-stock-photo-office-work-place.jpg" %>
+  <% end %>
 
-<% if @work_space.photo.present? %>
-  <%= cl_image_tag @work_space.photo.key, height: 600, crop: :fit %>
-<% else %>
-  <%= image_tag "https://st.depositphotos.com/1008438/1896/i/950/depositphotos_18961721-stock-photo-office-work-place.jpg" %>
-<% end %>
-
-<h3>Work space Info</h3>
-
-<p style="color: green"><%= notice %></p>
-
-<div id="<%= dom_id @work_space %>">
-
-    <strong>Name:</strong>
-    <%= @work_space.name %>
-
-    <strong>Price:</strong>
-    <%= @work_space.price %>
-
-
-    <strong>Description:</strong>
-    <%= @work_space.description %>
-
+  <div class="card-trip-infos" id="<%= dom_id @work_space %>">
+    <div>
+      <strong>Name:</strong>
+      <%= @work_space.name %>
+    </div>
+    <div>
+      <strong>Price:</strong>
+      <%= @work_space.price %>
+    </div>
+    <div>
+      <strong>Description:</strong>
+      <%= @work_space.description %>
+    </div>
+  </div>
+  <%= link_to "Booking", new_work_space_booking_path(@work_space), class: "btn btn-secondary w-100" %>
 </div>
 
-<div>
-  <%= link_to "Back to work spaces", work_spaces_path, class: "btn btn-secondary" %>
+<%# <p style="color: green"><%= notice ></p> %>
+
+<div class="btn-show">
+  <%= link_to "Back to work spaces", work_spaces_path, class: "btn btn-outline-secondary" %>
   <% if policy(@work_space).destroy? %>
     <%= link_to "Delete space", work_space_path(@work_space), data: { turbo_method: :delete } %>
   <% end %>
-</div>
 
-<div>
-  <%= link_to "Booking", new_work_space_booking_path(@work_space), class: "btn btn-secondary" %>
 </div>
