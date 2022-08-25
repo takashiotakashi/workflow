@@ -6,8 +6,8 @@
 
     <div class="card">
 
-    <% if work_space.photo.present? %>
-      <%= cl_image_tag work_space.photo.key, height: 300, width: 400, crop: :fill %>
+    <% if work_space.photos.present? %>
+      <%= cl_image_tag work_space.photos.first.key, height: 300, width: 400, crop: :fill %>
     <% else %>
       <%= image_tag "https://st.depositphotos.com/1008438/1896/i/950/depositphotos_18961721-stock-photo-office-work-place.jpg" %>
     <% end %>
@@ -35,4 +35,10 @@
     </div>
     <%end%>
   </div>
+
+  <div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
 </div>

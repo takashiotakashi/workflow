@@ -1,14 +1,20 @@
 class WorkSpacesController < ApplicationController
-  
+  before_action :set_workspace, except: %i[index new create]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @work_spaces = policy_scope(WorkSpace)
+    @work_spaces = WorkSpace.all
+    # The `geocoded` scope filters only flats with coordinates
+    @markers = @work_spaces.geocoded.map do |work_space|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show
-    @work_space = WorkSpace.find(params[:id])
-    authorize @work_space
   end
 
   def new
@@ -28,15 +34,10 @@ class WorkSpacesController < ApplicationController
   end
 
   def edit
-    set_workspace
-    authorize @work_space
   end
 
   def update
-    authorize @work_space
-    set_workspace
     @work_space.update(work_space_params)
-
     if @work_space.save
       redirect_to work_space_path(@work_space), notice: "Work Space was successfully updated."
     else
@@ -45,8 +46,6 @@ class WorkSpacesController < ApplicationController
   end
 
   def destroy
-    set_workspace
-    authorize @work_space
     @work_space.destroy
     redirect_to work_spaces_path, status: :see_other
   end
@@ -54,10 +53,11 @@ class WorkSpacesController < ApplicationController
   private
 
   def work_space_params
-    params.require(:work_space).permit(:user, :name, :price, :description, :photo)
+    params.require(:work_space).permit(:user_id, :name, :price, :description, photos: [])
   end
 
   def set_workspace
     @work_space = WorkSpace.find(params[:id])
+    authorize @work_space
   end
 end

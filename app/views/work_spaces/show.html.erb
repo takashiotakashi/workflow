@@ -1,8 +1,11 @@
 
-<% if @work_space.photo.present? %>
-  <%= cl_image_tag @work_space.photo.key, height: 300, width: 400, crop: :fill %>
+<% if @work_space.photos.attached? %>
+  <% @work_space.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 200, width: 400 %>
+  <% end %>
 <% else %>
-  <%= image_tag "https://st.depositphotos.com/1008438/1896/i/950/depositphotos_18961721-stock-photo-office-work-place.jpg" %>
+  <%#= image_tag "https://st.depositphotos.com/1008438/1896/i/950/depositphotos_18961721-stock-photo-office-work-place.jpg" %>
+  Coloque uma imagem.
 <% end %>
 
 <h3>Work space Info</h3>

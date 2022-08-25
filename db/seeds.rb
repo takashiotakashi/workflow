@@ -14,11 +14,11 @@ puts "Creating database..."
 user1 = User.create(email: "testeee@gmail.com", password: 123123, first_name: "Antonio", last_name: "Nunes" )
 user2 = User.create(email: "teste2@teste.com", password: 123123, first_name: "Joao", last_name: "Tore" )
 
-paulista = WorkSpace.create(user: user1, name: "Paulista Work", price: 123, description: "Show" )
-madalena = WorkSpace.create(user: user2, name: "Madalena Work", price: 456, description: "Perfeito" )
-lapa = WorkSpace.create(user: user1, name: "Lapa Work", price: 789, description: "Legal" )
-sumare = WorkSpace.create(user: user2, name: "Sumare Work", price: 1111, description: "Estranho" )
-morumbi = WorkSpace.create(user: user1, name: "Morumbi Work", price: 555, description: "Ok" )
+paulista = WorkSpace.create(user: user1, name: "Paulista Work", price: 123, description: "Show", latitude: 48.8649574, longitude: 2.3800617)
+madalena = WorkSpace.create(user: user2, name: "Madalena Work", price: 456, description: "Perfeito", latitude: 48.8649574 , longitude: 2.3800617)
+lapa = WorkSpace.create(user: user1, name: "Lapa Work", price: 789, description: "Legal", latitude: 48.8649574 , longitude: 2.3800617)
+sumare = WorkSpace.create(user: user2, name: "Sumare Work", price: 1111, description: "Estranho", latitude: 48.8649574 , longitude: 2.3800617)
+morumbi = WorkSpace.create(user: user1, name: "Morumbi Work", price: 555, description: "Ok", latitude: 48.8649574 , longitude: 2.3800617)
 
 reserva1 = Booking.create(user: user1, start_date: "25-08-2022", end_date: "27-09-2022", amount_due: 7897, work_space: paulista)
 reserva2 = Booking.create(user: user2, start_date: "24-08-2022" , end_date: "27-09-2022", amount_due: 7897, work_space: madalena)

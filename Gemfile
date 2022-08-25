@@ -24,6 +24,8 @@ gem "cloudinary"
 
 gem "pundit"
 
+gem "geocoder"
+
 gem "devise"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
