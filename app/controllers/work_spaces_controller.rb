@@ -1,8 +1,20 @@
 class WorkSpacesController < ApplicationController
-  
+
   skip_before_action :authenticate_user!, only: [:index, :show]
 
+  # def index
+  #   @products = Product.where.not(user: current_user)
+  # end
+  # def my_stickers
+  #   @products = Product.where(user: current_user)
+  # end
+
+
   def index
+    @work_spaces = policy_scope(WorkSpace)
+  end
+
+  def my_work_spaces
     @work_spaces = policy_scope(WorkSpace)
   end
 

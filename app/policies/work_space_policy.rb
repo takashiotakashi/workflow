@@ -6,6 +6,10 @@ class WorkSpacePolicy < ApplicationPolicy
     end
   end
 
+  def my_work_spaces?
+    record.user == user
+  end
+
   def show?
     true
   end

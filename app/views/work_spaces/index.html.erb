@@ -7,7 +7,7 @@
     <div class="card">
 
     <% if work_space.photo.present? %>
-      <%= cl_image_tag work_space.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag work_space.photo.key, height: 400, crop: :fit %>
     <% else %>
       <%= image_tag "https://st.depositphotos.com/1008438/1896/i/950/depositphotos_18961721-stock-photo-office-work-place.jpg" %>
     <% end %>
