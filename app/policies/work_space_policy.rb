@@ -19,6 +19,6 @@ class WorkSpacePolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    record.user == user && !record.bookings.any?
   end
 end

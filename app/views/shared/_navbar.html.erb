@@ -75,7 +75,7 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "See my bookings", user_path(current_user), class: "dropdown-item" %>
               <%= link_to "Rent my work space", new_work_space_path, class: "dropdown-item" %>
-              <%= link_to "View my work spaces", work_spaces_path, class: "dropdown-item" %>
+              <%= link_to "View my work spaces", my_work_spaces_work_spaces_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>

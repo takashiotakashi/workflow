@@ -1,13 +1,29 @@
-<div id="<%= dom_id work_space %>">
+    <div class="card">
 
-    <strong>Name:</strong>
-    <%= work_space.name %>
+      <% if work_space.photo.present? %>
+        <%= cl_image_tag work_space.photo.key, width: 400, crop: :fit %>
+      <% else %>
+        <%= image_tag "https://st.depositphotos.com/1008438/1896/i/950/depositphotos_18961721-stock-photo-office-work-place.jpg" %>
+      <% end %>
 
-    <strong>Price:</strong>
-    <%= work_space.price %>
+      <div class='card-name'>
+        <h2><%=work_space.name %></h2>
+      </div>
 
+      <div class='card-details'>
+        <p> Description: <%= work_space.description %></p>
+      </div>
 
-    <strong>Description:</strong>
-    <%= work_space.description %>
+      <div class='card-price'>
+        <p>R$ <%= work_space.price %></p>
+      </div>
 
-</div>
+      <div class='card-host'>
+        <p>Host: <%= work_space.user.first_name %></p>
+      </div>
+
+      <div class='button'>
+        <%= link_to "View more", work_space, class: 'btn btn-dark my-3' %>
+      </div>
+
+    </div>
