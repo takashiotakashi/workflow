@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :work_spaces
 
+  has_one_attached :avatar
+
   validates :first_name, :last_name, :email, presence: true
 
   devise :database_authenticatable, :registerable,

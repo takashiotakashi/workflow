@@ -12,41 +12,46 @@ WorkSpace.destroy_all
 User.destroy_all
 
 puts "Creating database..."
-user1 = User.create(email: "testeee@gmail.com", password: 123123, first_name: "Antonio", last_name: "Nunes")
-user2 = User.create(email: "teste2@teste.com", password: 123123, first_name: "Joao", last_name: "Tore")
 
-paulista = WorkSpace.create(user: user1, name: "Paulista Work", price: 123, description: "Show")
+ronaldo = User.create(email: "ronaldo@gmail.com", password: 'wewewe', first_name: "Ronaldo", last_name: "Fenomeno")
+file = URI.open("https://res.cloudinary.com/dkearav60/image/upload/v1661457919/avatars/103535954_fpo1gw.jpg")
+ronaldo.avatar.attach(io: file, filename: "av4.jpg", content_type: "image/jpg")
+
+wagner = User.create(email: "wagner@gmail.com", password: 'wewewe', first_name: "Wagner", last_name: "Moura")
+file = URI.open("https://res.cloudinary.com/dkearav60/image/upload/v1661457919/avatars/106714053_kznag1.jpg")
+wagner.avatar.attach(io: file, filename: "av3.jpg", content_type: "image/jpg")
+
+marcio = User.create(email: "marciopinho@gmail.com", password: 'wewewe', first_name: "Marcio", last_name: "Campi")
+file = URI.open("https://res.cloudinary.com/dkearav60/image/upload/v1661457919/avatars/2648044_y0nvxo.jpg")
+marcio.avatar.attach(io: file, filename: "av2.jpg", content_type: "image/jpg")
+
+carlos = User.create(email: "carlos@gmail.com", password: 'wewewe', first_name: "Carlos", last_name: "Chaplin")
+file = URI.open("https://res.cloudinary.com/dkearav60/image/upload/v1661457919/avatars/104123000_jp7xw1.jpg")
+carlos.avatar.attach(io: file, filename: "av1.jpg", content_type: "image/jpg")
+
+paulista = WorkSpace.create(user: ronaldo, name: "Paulista Work", price: 123, description: "Show")
 file = URI.open("http://res.cloudinary.com/dkearav60/image/upload/c_scale,w_1443/v1661374977/office_2.jpg")
-paulista.photo.attach(io: file, filename: "01.png", content_type: "image/png")
-# paulista.save
+paulista.photo.attach(io: file, filename: "01.png", content_type: "image/jpg")
 
-madalena = WorkSpace.create(user: user2, name: "Madalena Work", price: 456, description: "Espaço perfeito, bom.")
+
+madalena = WorkSpace.create(user: ronaldo, name: "Madalena Work", price: 456, description: "Espaço perfeito, bom.")
 file = URI.open("https://res.cloudinary.com/dkearav60/image/upload/c_scale,w_1081/v1661374974/office_3.jpg")
-madalena.photo.attach(io: file, filename: "01.png", content_type: "image/png")
-# madalena.save
+madalena.photo.attach(io: file, filename: "02.png", content_type: "image/jpg")
 
-lapa = WorkSpace.create(user: user1, name: "Lapa Work", price: 789, description: "Legal")
+lapa = WorkSpace.create(user: wagner, name: "Lapa Work", price: 789, description: "Legal")
 file = URI.open("http://res.cloudinary.com/dkearav60/image/upload/c_scale,w_869/v1661374972/office_4.jpg")
-lapa.photo.attach(io: file, filename: "01.png", content_type: "image/png")
-# lapa.save
+lapa.photo.attach(io: file, filename: "03.png", content_type: "image/jpg")
 
-sumare = WorkSpace.create(user: user2, name: "Sumare Work", price: 1111, description: "Estranho")
+sumare = WorkSpace.create(user: wagner, name: "Sumare Work", price: 1111, description: "Estranho")
 file = URI.open("https://res.cloudinary.com/dkearav60/image/upload/c_scale,h_1256/v1661374971/office_7.jpg")
-sumare.photo.attach(io: file, filename: "01.png", content_type: "image/png")
-# sumare.save
+sumare.photo.attach(io: file, filename: "04.png", content_type: "image/jpg")
 
-morumbi = WorkSpace.create(user: user1, name: "Morumbi Work", price: 555, description: "Ok")
+morumbi = WorkSpace.create(user: marcio, name: "Morumbi Work", price: 555, description: "Ok")
 file = URI.open("http://res.cloudinary.com/dkearav60/image/upload/c_scale,w_2336/v1661374979/office_1.jpg")
-morumbi.photo.attach(io: file, filename: "01.png", content_type: "image/png")
-# morumbi.save
+morumbi.photo.attach(io: file, filename: "05.png", content_type: "image/jpg")
 
-reserva1 = Booking.create(user: user1, start_date: "25-08-2022", end_date: "27-09-2022", amount_due: 7897, work_space: paulista)
-reserva2 = Booking.create(user: user2, start_date: "24-08-2022" , end_date: "27-09-2022", amount_due: 7897, work_space: madalena)
-reserva3 = Booking.create(user: user1, start_date: "29-08-2022" , end_date: "27-09-2022", amount_due: 7897, work_space: lapa)
-reserva4 = Booking.create(user: user2, start_date: "28-08-2022" , end_date: "27-09-2022", amount_due: 7897, work_space: sumare)
-reserva5 = Booking.create(user: user1, start_date: "26-08-2022" , end_date: "27-09-2022", amount_due: 7897, work_space: morumbi)
-
-# file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
-# article = Article.new(title: "NES", body: "A great console")
-# article.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# article.save
+reserva1 = Booking.create(user: ronaldo, start_date: "25-08-2022", end_date: "27-09-2022", amount_due: 7897, work_space: paulista)
+reserva2 = Booking.create(user: wagner, start_date: "24-08-2022" , end_date: "27-09-2022", amount_due: 7897, work_space: madalena)
+reserva3 = Booking.create(user: marcio, start_date: "29-08-2022" , end_date: "27-09-2022", amount_due: 7897, work_space: lapa)
+reserva4 = Booking.create(user: carlos, start_date: "28-08-2022" , end_date: "27-09-2022", amount_due: 7897, work_space: sumare)
+reserva5 = Booking.create(user: carlos, start_date: "26-08-2022" , end_date: "27-09-2022", amount_due: 7897, work_space: morumbi)
