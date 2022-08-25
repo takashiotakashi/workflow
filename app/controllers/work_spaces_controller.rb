@@ -5,6 +5,12 @@ class WorkSpacesController < ApplicationController
 
   def index
     @work_spaces = policy_scope(WorkSpace)
+    @markers = @work_spaces.geocoded.map do |work_space|
+      {
+        lat: work_space.latitude,
+        lng: work_space.longitude
+      }
+    end
   end
 
   def my_work_spaces

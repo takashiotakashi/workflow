@@ -26,6 +26,9 @@ gem "pundit"
 
 gem "devise"
 
+# Gemfile
+gem "geocoder"
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
@@ -81,4 +84,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "devise"
+  gem "geocoder"
 end
