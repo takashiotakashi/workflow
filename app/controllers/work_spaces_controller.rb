@@ -1,6 +1,7 @@
 class WorkSpacesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
   
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @work_spaces = policy_scope(WorkSpace)
   end
