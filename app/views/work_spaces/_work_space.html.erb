@@ -1,23 +1,23 @@
 <div class="card">
 
   <% if work_space.photos.present? %>
-  <%= cl_image_tag work_space.photos.first.key, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag work_space.photos.first.key, height: 300, width: 400, crop: :fill %>
   <% else %>
     <%= image_tag "https://st.depositphotos.com/1008438/1896/i/950/depositphotos_18961721-stock-photo-office-work-place.jpg" %>
   <% end %>
 
-      <div class="card-info">
-        <div class='card-name'>
-          <h2><%=work_space.name %></h2>
-        </div>
+  <div class="card-info">
+    <div class='card-name'>
+      <h2><%=work_space.name %></h2>
+    </div>
 
-        <div class='card-price'>
-          <p>From <%= number_to_currency(work_space.price) %> per day</p>
-        </div>
+    <div class='card-price'>
+      <p>From <%= number_to_currency(work_space.price) %> per day</p>
+    </div>
 
-        <div class='card-host'>
-          <p><i class="fa-solid fa-user"></i> Host: <%= work_space.user.first_name %></p>
-        </div>
+    <div class='card-host'>
+      <p><i class="fa-solid fa-user"></i> Host: <%= work_space.user.first_name %></p>
+    </div>
 
     <div class='button'>
       <%= link_to "View more", work_space, class: 'btn btn-dark my-3' %>
