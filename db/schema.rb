@@ -78,6 +78,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_202014) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_work_spaces_on_user_id"
   end
 

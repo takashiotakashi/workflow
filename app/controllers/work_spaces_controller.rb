@@ -1,17 +1,20 @@
 class WorkSpacesController < ApplicationController
   before_action :set_workspace, except: %i[index new create]
   skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_after_action :verify_authorized, only: :my_work_spaces
 
   def index
     @work_spaces = policy_scope(WorkSpace)
-    @work_spaces = WorkSpace.all
-    # The `geocoded` scope filters only flats with coordinates
     @markers = @work_spaces.geocoded.map do |work_space|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: work_space.latitude,
+        lng: work_space.longitude
       }
     end
+  end
+
+  def my_work_spaces
+    @work_spaces = policy_scope(WorkSpace).where(user: current_user)
   end
 
   def show

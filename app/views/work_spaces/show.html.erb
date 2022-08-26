@@ -1,4 +1,4 @@
-
+<div class="card-trip">
 <% if @work_space.photos.attached? %>
   <% @work_space.photos.each do |photo| %>
     <%= cl_image_tag photo.key, height: 200, width: 400 %>
@@ -8,23 +8,29 @@
   Coloque uma imagem.
 <% end %>
 
-<h3>Work space Info</h3>
+  <div class="card-trip-infos" id="<%= dom_id @work_space %>">
+    <div>
+      <strong>Name:</strong>
+      <%= @work_space.name %>
+    </div>
+    <div>
+      <strong>Price:</strong>
+      <%= @work_space.price %>
+    </div>
+    <div>
+      <strong>Description:</strong>
+      <%= @work_space.description %>
+    </div>
+  </div>
+  <%= link_to "Booking", new_work_space_booking_path(@work_space), class: "btn btn-secondary w-100" %>
+</div>
 
-<p style="color: green"><%= notice %></p>
+<%# <p style="color: green"><%= notice ></p> %>
 
-<%= render @work_space %>
-
-<div>
-  <%= link_to "Back to work spaces", work_spaces_path, class: "btn btn-secondary" %>
+<div class="btn-show">
+  <%= link_to "Back to work spaces", work_spaces_path, class: "btn btn-outline-secondary" %>
   <% if policy(@work_space).destroy? %>
     <%= link_to "Delete space", work_space_path(@work_space), data: { turbo_method: :delete } %>
   <% end %>
-</div>
 
-<div>
-  <%= link_to "Booking", new_work_space_booking_path(@work_space), class: "btn btn-secondary" %>
-</div>
-
-<div>
-<%= link_to "Edit this work space", edit_work_space_path(@work_space), class: "btn btn-secondary" %>
 </div>
