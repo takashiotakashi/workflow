@@ -1,7 +1,29 @@
 <h1 class="page-header pages">Your bookings</h1>
-<% @user.bookings.each do |booking|%>
-  <div class="card home-grid">
-    <%= booking.work_space.name %>
-    <%= booking.amount_due %>
-  </div>
-<% end %>
+<div class="home-grid">
+  <% @user.bookings.each do |booking|%>
+    <div class="card-trip">
+      <% if booking.work_space.photos.attached? %>
+        <% booking.work_space.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 200, width: 400 %>
+        <% end %>
+      <% else %>
+        Coloque uma imagem.
+      <% end %>
+
+      <div class="card-trip-infos flex-column">
+        <div>
+          <strong>Name:</strong>
+          <%= booking.work_space.name %>
+        </div>
+        <div>
+          <strong>Price:</strong>
+          <%= number_to_currency(booking.work_space.price) %>
+        </div>
+        <div>
+          <strong>Description:</strong>
+          <%= booking.work_space.description %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
