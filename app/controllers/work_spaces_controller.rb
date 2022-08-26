@@ -1,5 +1,5 @@
 class WorkSpacesController < ApplicationController
-  before_action :set_workspace, except: %i[index new create]
+  before_action :set_workspace, except: %i[index new create my_work_spaces]
   skip_before_action :authenticate_user!, only: [:index, :show]
   skip_after_action :verify_authorized, only: :my_work_spaces
 
