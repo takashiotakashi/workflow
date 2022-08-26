@@ -31,7 +31,7 @@ file = URI.open("https://res.cloudinary.com/dkearav60/image/upload/v1661457919/a
 carlos.avatar.attach(io: file, filename: "av1.jpg", content_type: "image/jpg")
 
 
-paulista = WorkSpace.create(user: carlos, name: "Paulista Work", price: 123, description: "Show", address: "Av. Paulista, 2073, Sao Paulo")
+paulista = WorkSpace.create(user: carlos, name: "Paulista Work", price: 123, description: "Qualified team to cater for all your needs.", address: "Rua Mourato Coelho, 763, São Paulo")
 file = URI.open("http://res.cloudinary.com/dkearav60/image/upload/c_scale,w_1443/v1661374977/office_2.jpg")
 paulista.photos.attach(io: file, filename: "01.png", content_type: "image/jpg")
 
