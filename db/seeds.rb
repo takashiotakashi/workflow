@@ -30,23 +30,25 @@ carlos = User.create(email: "carlos@gmail.com", password: 'wewewe', first_name: 
 file = URI.open("https://res.cloudinary.com/dkearav60/image/upload/v1661457919/avatars/104123000_jp7xw1.jpg")
 carlos.avatar.attach(io: file, filename: "av1.jpg", content_type: "image/jpg")
 
+
 paulista = WorkSpace.create(user: carlos, name: "Paulista Work", price: 123, description: "Show", address: "Av. Paulista, 2073, Sao Paulo")
 file = URI.open("http://res.cloudinary.com/dkearav60/image/upload/c_scale,w_1443/v1661374977/office_2.jpg")
 paulista.photos.attach(io: file, filename: "01.png", content_type: "image/jpg")
 
-madalena = WorkSpace.create(user: marcio, name: "Madalena Work", price: 456, description: "Espaço perfeito, bom.", address: "Rua Aspicuelta, 4444, Sao Paulo")
+madalena = WorkSpace.create(user: wagner, name: "Madalena Work", price: 456, description: "Espaço perfeito, bom.", address: "Rua Aspicuelta, 4444, Sao Paulo")
 file = URI.open("https://res.cloudinary.com/dkearav60/image/upload/c_scale,w_1081/v1661374974/office_3.jpg")
 madalena.photos.attach(io: file, filename: "02.png", content_type: "image/jpg")
 
-lapa = WorkSpace.create(user: carlos, name: "Lapa Work", price: 789, description: "Legal", address: "R. Faustolo, 1633, Sao Paulo")
+lapa = WorkSpace.create(user: wagner, name: "Lapa Work", price: 789, description: "Legal", address: "R. Faustolo, 1633, Sao Paulo")
 file = URI.open("http://res.cloudinary.com/dkearav60/image/upload/c_scale,w_869/v1661374972/office_4.jpg")
 lapa.photos.attach(io: file, filename: "03.png", content_type: "image/jpg")
+
 
 sumare = WorkSpace.create(user: marcio, name: "Sumare Work", price: 1111, description: "Estranho", address: "Av. Purpurina, 89, Sao Paulo")
 file = URI.open("https://res.cloudinary.com/dkearav60/image/upload/c_scale,h_1256/v1661374971/office_7.jpg")
 sumare.photos.attach(io: file, filename: "04.png", content_type: "image/jpg")
 
-morumbi = WorkSpace.create(user: marcio, name: "Morumbi Work", price: 555, description: "Ok", address: "Av. Morumbi, 501, Sao Paulo")
+morumbi = WorkSpace.create(user: ronaldo, name: "Morumbi Work", price: 555, description: "Ok", address: "Av. Morumbi, 501, Sao Paulo")
 file = URI.open("http://res.cloudinary.com/dkearav60/image/upload/c_scale,w_2336/v1661374979/office_1.jpg")
 morumbi.photos.attach(io: file, filename: "05.png", content_type: "image/jpg")
 
