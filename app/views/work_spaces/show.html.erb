@@ -8,17 +8,16 @@
   Coloque uma imagem.
 <% end %>
 
-  <div class="card-trip-infos" id="<%= dom_id @work_space %>">
+  <div id="ws-show">
     <div>
-      <strong>Name:</strong>
-      <%= @work_space.name %>
+      <strong><%= @work_space.name %></strong>
+
     </div>
     <div>
-      <strong>Price:</strong>
-      <%= @work_space.price %>
+      <%= number_to_currency(@work_space.price) %> per day.
     </div>
+
     <div>
-      <strong>Description:</strong>
       <%= @work_space.description %>
     </div>
   </div>
