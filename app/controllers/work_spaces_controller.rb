@@ -56,7 +56,7 @@ class WorkSpacesController < ApplicationController
   private
 
   def work_space_params
-    params.require(:work_space).permit(:user, :name, :price, :description, :photo)
+    params.require(:work_space).permit(:user_id, :name, :price, :description, photos: [])
   end
 
   def set_workspace

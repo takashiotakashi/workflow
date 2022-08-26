@@ -24,6 +24,8 @@ gem "cloudinary"
 
 gem "pundit"
 
+gem "geocoder"
+
 gem "devise"
 
 # Gemfile

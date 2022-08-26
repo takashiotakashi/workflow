@@ -1,9 +1,12 @@
 <div class="card-trip">
-  <% if @work_space.photo.present? %>
-    <%= cl_image_tag @work_space.photo.key, height: 600, crop: :fit %>
-  <% else %>
-    <%= image_tag "https://st.depositphotos.com/1008438/1896/i/950/depositphotos_18961721-stock-photo-office-work-place.jpg" %>
+<% if @work_space.photos.attached? %>
+  <% @work_space.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 200, width: 400 %>
   <% end %>
+<% else %>
+  <%#= image_tag "https://st.depositphotos.com/1008438/1896/i/950/depositphotos_18961721-stock-photo-office-work-place.jpg" %>
+  Coloque uma imagem.
+<% end %>
 
   <div class="card-trip-infos" id="<%= dom_id @work_space %>">
     <div>
