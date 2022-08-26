@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+.home-container {
+  display: flex;
+}
+
 .home-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

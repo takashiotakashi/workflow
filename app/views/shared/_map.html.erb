@@ -1,0 +1,15 @@
+
+<%# <div id='map' style='width: 400px; height: 300px;'></div> %>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoidGFrYXNoaW90YWthc2hpIiwiYSI6ImNsNmdyMnN1NzA2b3QzaW53NXJ2eXVsOHQifQ.meHbyd4MCtSuF4SsP6PYqA';
+const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    center: [-74.5, 40], // starting position [lng, lat]
+    zoom: 9, // starting zoom
+    projection: 'globe' // display the map as a 3D globe
+});
+map.on('style.load', () => {
+    map.setFog({}); // Set the default atmosphere style
+});
+</script>
