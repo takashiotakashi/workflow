@@ -31,25 +31,28 @@ file = URI.open("https://res.cloudinary.com/dkearav60/image/upload/v1661457919/a
 carlos.avatar.attach(io: file, filename: "av1.jpg", content_type: "image/jpg")
 
 
-paulista = WorkSpace.create(user: carlos, name: "Paulista Work", price: 123, description: "Qualified team to cater for all your needs.", address: "Rua Mourato Coelho, 763, São Paulo")
+paulista = WorkSpace.create(user: carlos, name: "Paulista CoWork", price: 123, description: "Qualified team to cater for all your needs.", address: "Rua Mourato Coelho, 763, São Paulo")
 file = URI.open("http://res.cloudinary.com/dkearav60/image/upload/c_scale,w_1443/v1661374977/office_2.jpg")
 paulista.photos.attach(io: file, filename: "01.png", content_type: "image/jpg")
 
-madalena = WorkSpace.create(user: wagner, name: "Madalena Work", price: 456, description: "Espaço perfeito, bom.", address: "Rua Aspicuelta, 4444, Sao Paulo")
+madalena = WorkSpace.create(user: wagner, name: "Madalena Tower", price: 456, description: "Whether you’re a team of one, a growing startup, or a Fortune 500 company—we have flexible solutions for all the ways you work.", address: "Rua Aspicuelta, 4444, São Paulo")
 file = URI.open("https://res.cloudinary.com/dkearav60/image/upload/c_scale,w_1081/v1661374974/office_3.jpg")
 madalena.photos.attach(io: file, filename: "02.png", content_type: "image/jpg")
 
-lapa = WorkSpace.create(user: wagner, name: "Lapa Work", price: 789, description: "Legal", address: "R. Faustolo, 1633, Sao Paulo")
+lapa = WorkSpace.create(user: wagner, name: "Lapa Offices", price: 789, description: "Whether you’re a team of one, a growing startup, or a Fortune 500 company—we have flexible solutions for all the ways you work.", address: "R. Faustolo, 1633, São Paulo")
 file = URI.open("http://res.cloudinary.com/dkearav60/image/upload/c_scale,w_869/v1661374972/office_4.jpg")
 lapa.photos.attach(io: file, filename: "03.png", content_type: "image/jpg")
 
-
-sumare = WorkSpace.create(user: marcio, name: "Sumare Work", price: 1111, description: "Estranho", address: "Av. Purpurina, 89, Sao Paulo")
+sumare = WorkSpace.create(user: marcio, name: "Sumaré Desk", price: 1111, description: "Whether you’re a team of one, a growing startup, or a Fortune 500 company—we have flexible solutions for all the ways you work.", address: "Av. Purpurina, 89, São Paulo")
 file = URI.open("https://res.cloudinary.com/dkearav60/image/upload/c_scale,h_1256/v1661374971/office_7.jpg")
 sumare.photos.attach(io: file, filename: "04.png", content_type: "image/jpg")
 
-morumbi = WorkSpace.create(user: ronaldo, name: "Morumbi Work", price: 555, description: "Ok", address: "Av. Morumbi, 501, Sao Paulo")
+morumbi = WorkSpace.create(user: ronaldo, name: "Morumbi Hub", price: 555, description: "Whether you’re a team of one, a growing startup, or a Fortune 500 company—we have flexible solutions for all the ways you work.", address: "Av. Morumbi, 501, São Paulo")
 file = URI.open("http://res.cloudinary.com/dkearav60/image/upload/c_scale,w_2336/v1661374979/office_1.jpg")
+morumbi.photos.attach(io: file, filename: "05.png", content_type: "image/jpg")
+
+morumbi = WorkSpace.create(user: ronaldo, name: "Pinheiros Hub", price: 555, description: "Whether you’re a team of one, a growing startup, or a Fortune 500 company—we have flexible solutions for all the ways you work.", address: "Rua dos Pinheiros, 49, São Paulo")
+file = URI.open("http://res.cloudinary.com/dkearav60/image/upload/c_scale,w_2336/v1661374979/office_6.jpg")
 morumbi.photos.attach(io: file, filename: "05.png", content_type: "image/jpg")
 
 Booking.create(user: ronaldo, start_date: "25-08-2022", end_date: "27-09-2022", amount_due: 7897, work_space: paulista)
