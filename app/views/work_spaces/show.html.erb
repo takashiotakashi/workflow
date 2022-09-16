@@ -5,26 +5,22 @@
   <% end %>
 <% else %>
   <%#= image_tag "https://st.depositphotos.com/1008438/1896/i/950/depositphotos_18961721-stock-photo-office-work-place.jpg" %>
-  Coloque uma imagem.
+  <span>No image.</span>
 <% end %>
 
   <div id="ws-show">
     <div>
       <strong><%= @work_space.name %></strong>
-
     </div>
     <div>
       <%= number_to_currency(@work_space.price) %> per day.
     </div>
-
     <div>
       <%= @work_space.description %>
     </div>
   </div>
   <%= link_to "Booking", new_work_space_booking_path(@work_space), class: "btn btn-secondary w-100" %>
 </div>
-
-<%# <p style="color: green"><%= notice ></p> %>
 
 <div class="btn-show">
   <%= link_to "Back to work spaces", work_spaces_path, class: "btn btn-outline-secondary" %>
