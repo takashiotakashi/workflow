@@ -19,13 +19,13 @@
       <%= @work_space.description %>
     </div>
   </div>
-  <%= link_to "Booking", new_work_space_booking_path(@work_space), class: "btn btn-secondary w-100" %>
-</div>
-
-<div class="btn-show">
-  <%= link_to "Back to work spaces", work_spaces_path, class: "btn btn-outline-secondary" %>
-  <% if policy(@work_space).destroy? %>
-    <%= link_to "Delete space", work_space_path(@work_space), data: { turbo_method: :delete } %>
-  <% end %>
-
+  <div class="btn-show">
+    <%= link_to "Book this workspace", new_work_space_booking_path(@work_space), class: "btn btn-dark" %>
+    <div>
+      <%= link_to "Back to workspaces", work_spaces_path, class: "btn btn-outline-secondary" %>
+      <% if policy(@work_space).destroy? %>
+        <%= link_to "Delete space", work_space_path(@work_space), data: { turbo_method: :delete } %>
+      <% end %>
+    </div>
+  </div>
 </div>

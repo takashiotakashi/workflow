@@ -1,7 +1,6 @@
 .card-name {
   display: flex;
   justify-content: center;
-  // background-color: rgb(203, 200, 200);
 }
 
 .card {
@@ -31,10 +30,8 @@
 
 .card-trip {
   margin: 20px auto;
-  overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  // height: 500px;
 }
 
 .card-trip > img {
